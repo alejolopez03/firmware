@@ -1,0 +1,6 @@
+key,type,encoding,value
+certs,namespace,,
+dev_cert,file,string,device.pem.crt
+priv_key,file,string,private.pem.key
+dev_id,data,string,00000000-0000-0000-0000-000000000000
+topic_parent,data,string,user@email.com

@@ -1,0 +1,85 @@
+menu "Application Configuration"
+	config VALVE_OUTPUT_TIME
+		int "Valve output time"
+		default 6000
+		help
+			Time in miliseconds to open/close the valve.
+	config VALVE_OUTPUT_PIN_1
+		int "Valve output GPIO pin 1"
+		default 1
+		help
+			GPIO 1 pin that drives electro valve output.
+			
+	config VALVE_OUTPUT_PIN_2
+		int "Valve output GPIO pin 2"
+		default 3
+		help
+			GPIO 2 pin that drives electro valve output.
+
+    config WIFI_RECONNECT_TIME
+        int "Time to reconnect Wi-Fi"
+        default 20000
+        help
+            Time in miliseconds to reconnect to Wi-Fi.
+            
+	config WIFI_LED_PIN
+		int "Wi-Fi LED GPIO pin"
+		default 6
+		help
+			GPIO pin that drives Wi-Fi LED status.
+			
+	config VALVE_LED_PIN
+		int "Valve LED GPIO pin"
+		default 5
+		help
+			GPIO pin that drives electro valve LED status.
+			
+	config WIFI_BUTTON_PIN
+		int "Wi-Fi button GPIO"
+		default 7
+		help
+			GPIO pin for Wi-Fi functionality button.
+			
+	config VALVE_BUTTON_PIN
+		int "Valve button GPIO"
+		default 4
+		help
+			GPIO pin for electro valve functionality button.
+			
+	config MQTT_DEVICE_STATE_TOPIC
+		string "MQTT topic for device state"
+		help
+			MQTT topic to publish device state.
+       
+	config MQTT_VALVE_STATE_TOPIC
+		string "MQTT topic for valve state"
+		help
+			MQTT topic to recevice valve state.
+			
+	config MQTT_VALVE_DESIRED_STATE_TOPIC
+		string "MQTT topic for valve desired state"
+		help
+			MQTT topic to recevice valve desired state.
+			
+	config MQTT_OTA_UPDATES_TOPIC
+		string "MQTT topic for OTA updates"
+		help
+			MQTT topic to recieve notifications to start OTA updates. 
+            
+    config MQTT_BROKER_URL
+    	string "MQTT broker URL"
+    	help
+			URL for the MQTT broker. This must contain the number port and protol used.
+
+	config MQTT_LWT_ENABLE
+		bool "Enable LWT"
+		default y
+		help
+			Enable MQTT Last Will Message.
+
+    config OTA_URL
+    	string "OTA URL"
+    	help
+			URL to get OTA updates.
+				
+endmenu

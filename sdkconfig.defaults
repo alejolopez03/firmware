@@ -1,0 +1,53 @@
+#
+# Application Configuration
+#
+CONFIG_VALVE_OUTPUT_TIME=5000
+CONFIG_VALVE_OUTPUT_PIN_1=18
+CONFIG_VALVE_OUTPUT_PIN_2=19
+CONFIG_VALVE_LED_PIN=22
+CONFIG_VALVE_BUTTON_PIN=23
+CONFIG_WIFI_LED_PIN=27
+CONFIG_WIFI_BUTTON_PIN=26
+CONFIG_WIFI_RECONNECT_TIME=20000
+
+CONFIG_MQTT_DEVICE_STATE_TOPIC="device_state"
+CONFIG_MQTT_VALVE_STATE_TOPIC="valve_state"
+CONFIG_MQTT_VALVE_DESIRED_STATE_TOPIC="valve_desired_state"
+CONFIG_MQTT_OTA_UPDATES_TOPIC="ota_updates"
+CONFIG_MQTT_BROKER_URL="mqtts://a3106v8p7zalp8-ats.iot.us-east-1.amazonaws.com:8883"
+
+CONFIG_OTA_URL="https://wit-fuota.s3.amazonaws.com/wit102.bin"
+# end of Application Configuration
+
+#
+# FreeRTOS
+# 
+CONFIG_FREERTOS_HZ=1000
+# end of FreeRTOS config
+
+#
+# Bootloader config
+#
+# end of Bootloader config
+
+#
+# Security features
+#
+# end of Security features
+
+#
+# Serial flasher config
+#
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+# end of Serial flasher config
+
+#
+# Partition Table
+#
+CONFIG_PARTITION_TABLE_TWO_OTA=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_OFFSET=0x8000
+CONFIG_PARTITION_TABLE_MD5=y
+# end of Partition Table
