@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build and analyze
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
       BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directorio donde se colocará la salida de build-wrapper
 
@@ -23,15 +23,9 @@ jobs:
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v2
 
-      - name: Build project
-        run: |
-          # Ejecuta tus comandos de construcción de C++ aquí
-          # Por ejemplo, si usas g++ para compilar:
-          g++ -o mi_programa source.cpp
-
       - name: Run build-wrapper
         run: |
-          build-wrapper-win-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} g++ -o mi_programa source.cpp
+          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} g++ -o mi_programa main/main.c
 
       - name: Run sonar-scanner
         env:
@@ -39,6 +33,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"
-
-
 
